@@ -9,15 +9,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         NavigationView {
-//        ZStack {
-//            Color.gray.edgesIgnoringSafeArea(.all)
-//            Spacer()
-            Text("BedTimeMonitor")
-//            }
-        }.navigationBarTitle(Text("kk"))
-        .navigationBarHidden(false)
+            Text("")
+            .navigationBarTitle("BedSideMonitor", displayMode: .inline)
+            .navigationBarItems(leading:
+                Button(action: {
+                }) {
+                    Image("menu")
+                }
+            )
+        }
     }
 }
 
