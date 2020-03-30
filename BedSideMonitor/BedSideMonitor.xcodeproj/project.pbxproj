@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		183AF651242F6D530059F181 /* LeftMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AF650242F6D530059F181 /* LeftMenuView.swift */; };
+		184306A22431B5AB00810E96 /* MQTTConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184306A12431B5AB00810E96 /* MQTTConnector.swift */; };
 		184585C6242D3345008CB5D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184585C5242D3345008CB5D5 /* AppDelegate.swift */; };
 		184585C8242D3345008CB5D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184585C7242D3345008CB5D5 /* SceneDelegate.swift */; };
 		184585CA242D3345008CB5D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184585C9242D3345008CB5D5 /* ContentView.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		183AF650242F6D530059F181 /* LeftMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuView.swift; sourceTree = "<group>"; };
+		184306A12431B5AB00810E96 /* MQTTConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTConnector.swift; sourceTree = "<group>"; };
 		184585C2242D3345008CB5D5 /* BedSideMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BedSideMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		184585C5242D3345008CB5D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		184585C7242D3345008CB5D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		184306A02431B58E00810E96 /* MQTTConnector */ = {
+			isa = PBXGroup;
+			children = (
+				184306A12431B5AB00810E96 /* MQTTConnector.swift */,
+			);
+			path = MQTTConnector;
+			sourceTree = "<group>";
+		};
 		184585B9242D3345008CB5D5 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +137,7 @@
 		184585C4242D3345008CB5D5 /* BedSideMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				184306A02431B58E00810E96 /* MQTTConnector */,
 				1843069F2431B4EA00810E96 /* UI */,
 				184585C5242D3345008CB5D5 /* AppDelegate.swift */,
 				184585C7242D3345008CB5D5 /* SceneDelegate.swift */,
@@ -428,6 +439,7 @@
 			files = (
 				183AF651242F6D530059F181 /* LeftMenuView.swift in Sources */,
 				184585C6242D3345008CB5D5 /* AppDelegate.swift in Sources */,
+				184306A22431B5AB00810E96 /* MQTTConnector.swift in Sources */,
 				184585C8242D3345008CB5D5 /* SceneDelegate.swift in Sources */,
 				184585CA242D3345008CB5D5 /* ContentView.swift in Sources */,
 			);
