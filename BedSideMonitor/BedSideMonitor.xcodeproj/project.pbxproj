@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -93,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1843069F2431B4EA00810E96 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				184585C9242D3345008CB5D5 /* ContentView.swift */,
+				183AF650242F6D530059F181 /* LeftMenuView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		184585B9242D3345008CB5D5 = {
 			isa = PBXGroup;
 			children = (
@@ -118,14 +127,13 @@
 		184585C4242D3345008CB5D5 /* BedSideMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				1843069F2431B4EA00810E96 /* UI */,
 				184585C5242D3345008CB5D5 /* AppDelegate.swift */,
 				184585C7242D3345008CB5D5 /* SceneDelegate.swift */,
-				184585C9242D3345008CB5D5 /* ContentView.swift */,
 				184585CB242D334D008CB5D5 /* Assets.xcassets */,
 				184585D0242D334D008CB5D5 /* LaunchScreen.storyboard */,
 				184585D3242D334D008CB5D5 /* Info.plist */,
 				184585CD242D334D008CB5D5 /* Preview Content */,
-				183AF650242F6D530059F181 /* LeftMenuView.swift */,
 			);
 			path = BedSideMonitor;
 			sourceTree = "<group>";
@@ -176,7 +184,6 @@
 				E3711E73E25898AAD9C90999 /* Pods-BedSideMonitorTests.debug.xcconfig */,
 				2199463818BDCF0B36142D27 /* Pods-BedSideMonitorTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
