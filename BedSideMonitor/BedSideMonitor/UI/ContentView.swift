@@ -13,8 +13,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Text("")
-            .navigationBarTitle("BedSideMonitor", displayMode: .inline)
-            .navigationBarItems(leading:
+                .navigationBarTitle("BedSideMonitor", displayMode: .inline)
+                .navigationBarItems(leading:
                     NavigationLink(destination: LeftMenuView()) {
                         Image("menu")
                     }

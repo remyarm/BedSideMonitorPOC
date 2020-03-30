@@ -20,7 +20,7 @@ class MQTTConnector: MQTTSessionDelegate {
         useSSL: false
     )
     
-    func subscribe() {
+    func connectToServer() {
         mqttSession.connect { (error) in
             if (error == .none) {
                 self.mqttSession.delegate = self
@@ -32,8 +32,8 @@ class MQTTConnector: MQTTSessionDelegate {
     }
     
     func mqttDidReceive(message: MQTTMessage, from session: MQTTSession) {
-           print(message.topic)
-           print(message.stringRepresentation)
+        print(message.topic)
+        print(message.stringRepresentation ?? "")
     }
        
     func mqttDidAcknowledgePing(from session: MQTTSession) {
