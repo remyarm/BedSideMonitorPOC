@@ -15,10 +15,9 @@ struct ContentView: View {
             Text("")
             .navigationBarTitle("BedSideMonitor", displayMode: .inline)
             .navigationBarItems(leading:
-                Button(action: {
-                }) {
-                    Image("menu")
-                }
+                    NavigationLink(destination: LeftMenuView()) {
+                        Image("menu")
+                    }
             )
         }
     }
