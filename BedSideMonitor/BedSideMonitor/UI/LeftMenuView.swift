@@ -9,26 +9,50 @@
 import SwiftUI
 
 struct LeftMenuView: View {
-    let deviceList = ["ECG","Device1","Device2"]
+    @EnvironmentObject var mainViewModel: MainViewModel
+    
     var body: some View {
-        VStack {
-            HStack {
-                Image("openICE-software")
-                .resizable()
-                    .frame(width: 150, height: 150, alignment: .leading)
-                    .scaledToFit()
-                    .padding(30)
-                Spacer()
-            }
-            .background(Color.gray)
-            List {
-                ForEach(deviceList, id: \.self) {
-                        Text($0)
-                            .foregroundColor(Color.primary)
-                            //.font(Font.system(.))
+        NavigationView {
+            VStack {
+//                HStack {
+                    Image("openICE-software")
+                        .resizable()
+                        .frame(width: CGFloat(150), height: CGFloat(150), alignment: .leading)
+                        .scaledToFit()
+//                        .padding(30)
+//                    Spacer()
+//                }
+                //            .background(Color.gray)
+//                NavigationLink(destination: EmptyView()) {
+                List() {
+                    
+//
+                        ForEach(mainViewModel.currentMenu.allMenuTypes(), id: \.self) { menu in
+                            
+                            Button(action: {
+                                withAnimation {
+                                guard let menuValue = MenuTypes(rawValue: menu) else { return}
+                                self.mainViewModel.currentMenu = menuValue
+                                self.mainViewModel.menuToggle.toggle()
+                                }
+                            }) {
+                                Text(menu)
+                            }
+                                //foregroundColor(Color.black)
+                                //.font(.custom("Georgia", size: 20))
+                            
+                        }
+//                    }
+                    
                 }
+//                }
             }
+            .transition(.move(edge: .leading))
+            .background(Color.black)
         }
+        .navigationBarTitle("", displayMode: .inline)
+        
+        //        .background(Color.gray)
     }
 }
 
