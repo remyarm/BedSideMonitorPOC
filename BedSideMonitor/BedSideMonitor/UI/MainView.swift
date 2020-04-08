@@ -13,59 +13,59 @@ struct MainView: View {
     var change = true
     var body: some View {
         NavigationView {
-            
-            
-            HStack {
+            VStack {
                 
-            
                 if (mainViewModel.currentMenu == .none) {
-                HStack {
-                     Spacer()
-                    //                        .layoutPriority(1)
-                                        GeometryReader { metrics in
-                                            if (self.mainViewModel.menuToggle) {
-                                                LeftMenuView()
-                                                    .frame(minWidth: nil, idealWidth: nil, maxWidth: metrics.size.height * 0.30, minHeight: nil, idealHeight: nil, maxHeight: .infinity, alignment: .topLeading)
-                                                    .transition(.move(edge: .leading))
-//                                                .background(Color.gray)
-                                            }
-                                        }
+                    VStack {
+                        Spacer()
+                        GeometryReader { metrics in
+                            if (self.mainViewModel.menuToggle) {
+                                LeftMenuView()
+                                    .frame(minWidth: nil, idealWidth: nil, maxWidth: metrics.size.height * 0.30, minHeight: nil, idealHeight: nil, maxHeight: .infinity, alignment: .leading)
+                                    .transition(.move(edge: .leading))
+                                    .background(Color.gray)
+                            }
+                        }
                     }
-                .background(Color.blue)
-                    }
+                .background(Color.gray)
+                }
+                    
                 else if (mainViewModel.currentMenu == .ECG) {
-                    HStack {
-                    Spacer()
-                    //                        .layoutPriority(1)
-                                        GeometryReader { metrics in
-                                            if (self.mainViewModel.menuToggle) {
-                                                LeftMenuView()
-                                                    .frame(minWidth: nil, idealWidth: nil, maxWidth: metrics.size.height * 0.30, minHeight: nil, idealHeight: nil, maxHeight: .infinity, alignment: .topLeading)
-                                                    .transition(.move(edge: .leading))
-//                                                    .background(Color.blue)
-                                                
-                                            }
-                                        }
+                    ZStack {
+                        GeometryReader { metrics in
+                            if (self.mainViewModel.menuToggle) {
+                                LeftMenuView()
+                                    .frame(minWidth: nil, idealWidth: nil, maxWidth: metrics.size.height * 0.30, minHeight: nil, idealHeight: nil, maxHeight: .infinity, alignment: .topLeading)
+                                    .transition(.move(edge: .leading))
+                                    .background(Color.blue)
+                            }
+                        }
+                        VStack {
+                            GraphView().frame(width: 300, height: 200, alignment: .top)
+                            Spacer().frame(width: 300, height: 30, alignment: .top)
+                            GraphView().frame(width: 300, height: 200, alignment: .top)
+                            Spacer().frame(width: 300, height: 30, alignment: .top)
+                            GraphView().frame(width: 300, height: 200, alignment: .top)
+                        }
                     }
                     .background(Color.gray)
+                    
                 } else if (mainViewModel.currentMenu == .Device1) {
-                    HStack {
+                    VStack {
                     Spacer()
-                    //                        .layoutPriority(1)
-                                        GeometryReader { metrics in
-                                            if (self.mainViewModel.menuToggle) {
-                                                LeftMenuView()
-                                                    .frame(minWidth: nil, idealWidth: nil, maxWidth: metrics.size.height * 0.30, minHeight: nil, idealHeight: nil, maxHeight: .infinity, alignment: .topLeading)
-                                                    .transition(.move(edge: .leading))
-//                                                    .background(Color.yellow)
-                                                
-                                            }
-                                        }
+                        GeometryReader { metrics in
+                            if (self.mainViewModel.menuToggle) {
+                                LeftMenuView()
+                                    .frame(minWidth: nil, idealWidth: nil, maxWidth: metrics.size.height * 0.30, minHeight: nil, idealHeight: nil, maxHeight: .infinity, alignment: .topLeading)
+                                    .transition(.move(edge: .leading))
+                                    .background(Color.yellow)
+                            }
+                        }
                     }
                     .background(Color.yellow)
                 }
             }
-            
+                
             .edgesIgnoringSafeArea(.all)
             .navigationBarTitle("BedSideMonitor", displayMode: .inline)
             .navigationBarItems(leading:
@@ -80,6 +80,7 @@ struct MainView: View {
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
