@@ -36,16 +36,19 @@ struct MainView: View {
                             if (self.mainViewModel.menuToggle) {
                                 LeftMenuView()
                                     .frame(minWidth: nil, idealWidth: nil, maxWidth: metrics.size.height * 0.30, minHeight: nil, idealHeight: nil, maxHeight: .infinity, alignment: .topLeading)
+                                
                                     .transition(.move(edge: .leading))
                                     .background(Color.blue)
                             }
                         }
                         VStack {
-                            GraphView().frame(width: 300, height: 200, alignment: .top)
+                            GraphView(value: $mainViewModel.currentValue).frame(width: 300, height: 200, alignment: .top)
+                                
+                            
                             Spacer().frame(width: 300, height: 30, alignment: .top)
-                            GraphView().frame(width: 300, height: 200, alignment: .top)
-                            Spacer().frame(width: 300, height: 30, alignment: .top)
-                            GraphView().frame(width: 300, height: 200, alignment: .top)
+//                            GraphView().frame(width: 300, height: 200, alignment: .top)
+//                            Spacer().frame(width: 300, height: 30, alignment: .top)
+//                            GraphView().frame(width: 300, height: 200, alignment: .top)
                         }
                     }
                     .background(Color.gray)

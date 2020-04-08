@@ -10,12 +10,13 @@ import Foundation
 import SwiftUI
 
 struct GraphView: UIViewRepresentable {
+    @Binding var value: Double
     func makeUIView(context: UIViewRepresentableContext<GraphView>) -> GraphUI {
         return GraphUI()
     }
     
     func updateUIView(_ uiView: GraphUI, context: UIViewRepresentableContext<GraphView>) {
-    
+        uiView.addValue(value: value)
     }
     
     typealias UIViewType = GraphUI

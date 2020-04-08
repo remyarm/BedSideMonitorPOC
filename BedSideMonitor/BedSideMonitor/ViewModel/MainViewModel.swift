@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 enum MenuTypes: String, CaseIterable {
     case none = "none"
@@ -25,5 +26,29 @@ enum MenuTypes: String, CaseIterable {
 class MainViewModel: ObservableObject {
     @Published var currentMenu = MenuTypes.none
     @Published var menuToggle = false
+    @Published var currentValue = 0.0
+    var mqttCancellable: AnyCancellable?
+    let mqttConnector = MQTTConnector()
+    init() {
+        connect()
+    }
+    
+    func connect() {
+      mqttCancellable =  self.mqttConnector.mqttPublisher.sink(receiveCompletion: { (_) in
+            print("Done")
+        }) { (value) in
+            self.currentValue = value
+        }
+//        self.mqttConnector.connectionPublisher.sink(receiveCompletion: {_ in
+//
+//        }) { (value) in
+//            if (value) {
+//
+//            }
+//        }
+        mqttConnector.connectToServer()
+    }
+    
+    
 }
 
