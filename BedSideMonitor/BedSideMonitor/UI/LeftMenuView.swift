@@ -38,17 +38,19 @@ struct LeftMenuView: View {
                             }) {
                                 Text(menu)
                             }
+                        
                                 //foregroundColor(Color.black)
                                 //.font(.custom("Georgia", size: 20))
                             
                         }
 //                    }
                     
+//                .listRowBackground(Color.gray)
                 }
-//                }
+                .background(Color.init(red: 0/255.0, green: 100/255.0, blue: 0/255.0))
             }
             .transition(.move(edge: .leading))
-            .background(Color.black)
+            .background(Color.init(red: 0/255.0, green: 100/255.0, blue: 0/255.0))
         }
         .navigationBarTitle("", displayMode: .inline)
         

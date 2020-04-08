@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 enum MenuTypes: String, CaseIterable {
-    case none = "none"
+    case none = "None"
     case ECG = "ECG"
     case Device1 = "Device1"
     

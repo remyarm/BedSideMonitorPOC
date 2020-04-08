@@ -12,10 +12,11 @@ struct MainView: View {
     @EnvironmentObject var mainViewModel: MainViewModel
     var change = true
     var body: some View {
+        GeometryReader { metrics in
         NavigationView {
             VStack {
                 
-                if (mainViewModel.currentMenu == .none) {
+                if (self.mainViewModel.currentMenu == .none) {
                     VStack {
                         Spacer()
                         GeometryReader { metrics in
@@ -30,7 +31,7 @@ struct MainView: View {
                 .background(Color.gray)
                 }
                     
-                else if (mainViewModel.currentMenu == .ECG) {
+                else if (self.mainViewModel.currentMenu == .ECG) {
                     ZStack {
                         GeometryReader { metrics in
                             if (self.mainViewModel.menuToggle) {
@@ -42,8 +43,16 @@ struct MainView: View {
                             }
                         }
                         VStack {
-                            GraphView(value: $mainViewModel.currentValue).frame(width: 300, height: 200, alignment: .top)
+                            ScrollView(.horizontal) {
+                                GraphView(value: self.$mainViewModel.currentValue).frame(width: metrics.size.width , height: 200, alignment: .topLeading
+                                )
+                                .padding(10)
                                 
+//                                if self.graphView.currentRect.x > self.scroller.frame.width {
+//                                    self.scroller.scrollRectToVisible(CGRect(x: self.graphView.currentRect.x, y: self.graphView.currentRect.y, width: 50, height: 50), animated: true)
+//                                }
+                            }
+                            
                             
                             Spacer().frame(width: 300, height: 30, alignment: .top)
 //                            GraphView().frame(width: 300, height: 200, alignment: .top)
@@ -53,7 +62,7 @@ struct MainView: View {
                     }
                     .background(Color.gray)
                     
-                } else if (mainViewModel.currentMenu == .Device1) {
+                } else if (self.mainViewModel.currentMenu == .Device1) {
                     VStack {
                     Spacer()
                         GeometryReader { metrics in
@@ -80,6 +89,7 @@ struct MainView: View {
                     Image("menu")
                 }
             )
+        }
         }
     }
 }
