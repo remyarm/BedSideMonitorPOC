@@ -42,22 +42,24 @@ struct MainView: View {
                                     .background(Color.blue)
                             }
                         }
+                        if (self.mainViewModel.menuToggle == false) {
                         VStack {
-                            ScrollView(.horizontal) {
-                                GraphView(value: self.$mainViewModel.currentValue).frame(width: metrics.size.width , height: 200, alignment: .topLeading
+//                            ScrollView(.horizontal) {
+                                GraphView(value: self.$mainViewModel.currentValue).frame(width: 200 , height: 200, alignment: .topLeading
                                 )
-                                .padding(10)
+                                
                                 
 //                                if self.graphView.currentRect.x > self.scroller.frame.width {
 //                                    self.scroller.scrollRectToVisible(CGRect(x: self.graphView.currentRect.x, y: self.graphView.currentRect.y, width: 50, height: 50), animated: true)
 //                                }
-                            }
-                            
+//                            }
+//                            .padding(20)
                             
                             Spacer().frame(width: 300, height: 30, alignment: .top)
-//                            GraphView().frame(width: 300, height: 200, alignment: .top)
-//                            Spacer().frame(width: 300, height: 30, alignment: .top)
-//                            GraphView().frame(width: 300, height: 200, alignment: .top)
+                            GraphView(value: self.$mainViewModel.currentValue).frame(width: 900, height: 200, alignment: .top)
+                            Spacer().frame(width: 300, height: 30, alignment: .top)
+                            GraphView(value: self.$mainViewModel.currentValue).frame(width: 900, height: 200, alignment: .top)
+                        }
                         }
                     }
                     .background(Color.gray)
