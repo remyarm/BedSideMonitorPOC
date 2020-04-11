@@ -103,20 +103,15 @@ class GraphUI: UIView {
                 defer {
                     context?.restoreGState()
                 }
-                let paragraphStyle = NSMutableParagraphStyle()
-                                    paragraphStyle.alignment = .center
-                // flip when drawing with CoreText
-                let attrs = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Thin", size: 20)!, NSAttributedString.Key.paragraphStyle: paragraphStyle]
+                
+                let attrs = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 10)!]
                 print(rect)
-                let origin = CGPoint(
-                    x: 1 * 100,
-                    y: 1 * 100)
                 context?.translateBy(x: rect.origin.x, y: rect.origin.y + rect.size.height)
                 context?.scaleBy(x: 1.0, y: -1.0)
-//                "ABC".draw(at point: .zero, withAttributes: attrs)
-                "ABC".draw(in: CGRect(origin: CGPoint(x: 60, y: 0), size: CGSize(width: 20, height: 30)), withAttributes: attrs)
-                //open func draw(at point: CGPoint, withAttributes attrs: [NSAttributedString.Key : Any]? = nil)
- 
+                for j in 0...10 {
+                    "1.0".draw(in: CGRect(origin: CGPoint(x: (j*30), y: 0), size: CGSize(width: 50, height: 50)), withAttributes: attrs)
+                }
+                
             }
         }
  
