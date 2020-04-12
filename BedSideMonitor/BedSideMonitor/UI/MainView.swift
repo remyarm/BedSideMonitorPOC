@@ -22,13 +22,14 @@ struct MainView: View {
                             GeometryReader { metrics in
                                 if (self.mainViewModel.menuToggle) {
                                     LeftMenuView()
-                                        .frame(minWidth: nil, idealWidth: nil, maxWidth: metrics.size.height * 0.30, minHeight: nil, idealHeight: nil, maxHeight: .infinity, alignment: .leading)
+                                        .frame(width: metrics.size.width*0.7, height: metrics.size.height, alignment: .top)
+                                      //  .frame(minWidth: nil, idealWidth: nil, maxWidth: metrics.size.height * 0.30, minHeight: nil, idealHeight: nil, maxHeight: .infinity, alignment: .top)
                                         .transition(.move(edge: .leading))
                                         .background(Color.gray)
                                 }
                             }
                         }
-                        .background(Color.gray)
+                        .background(Color.init(red: 72/255.0, green: 118/255.0, blue: 172/255.0))
                     }
                         
                     else if (self.mainViewModel.currentMenu == .ECG) {
@@ -44,17 +45,26 @@ struct MainView: View {
                             }
                             if (self.mainViewModel.menuToggle == false) {
                                 VStack {
-//                                    ScrollView {
-                                        GraphView(value: self.$mainViewModel.currentValue).frame(width: 500 , height: 200, alignment: .topLeading
-                                        )
+                                   //  Spacer().frame(width: 300, height: 30, alignment: .top)
+                                    ScrollView {
+                                        HStack {
+                                            GraphView(value: self.$mainViewModel.currentValue).frame(width: 600 , height: 300, alignment: .topLeading
+                                            )
+                                            .padding([.leading,.trailing, .top, .bottom], 20)
+                                        }
                                         
-//                                    }
+                                        
+                                    }
+                                .padding(20)
+                                  
+//                                    .position(x: 0, y: 0)
+                                    .background(Color.gray)
                                     
                                     
-                                    Spacer().frame(width: 300, height: 30, alignment: .top)
-                                    GraphView(value: self.$mainViewModel.currentValue).frame(width: 900, height: 200, alignment: .top)
-                                    Spacer().frame(width: 300, height: 30, alignment: .top)
-                                    GraphView(value: self.$mainViewModel.currentValue).frame(width: 900, height: 200, alignment: .top)
+//                                    Spacer().frame(width: 300, height: 30, alignment: .top)
+//                                    GraphView(value: self.$mainViewModel.currentValue).frame(width: 900, height: 200, alignment: .top)
+//                                    Spacer().frame(width: 300, height: 30, alignment: .top)
+//                                    GraphView(value: self.$mainViewModel.currentValue).frame(width: 900, height: 200, alignment: .top)
                                 }
                             }
                         }
@@ -76,7 +86,7 @@ struct MainView: View {
                     }
                 }
                     
-                .edgesIgnoringSafeArea(.all)
+//                .edgesIgnoringSafeArea(.all)
                 .navigationBarTitle("BedSideMonitor", displayMode: .inline)
                 .navigationBarItems(leading:
                     Button(action: {
@@ -91,7 +101,6 @@ struct MainView: View {
         }
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

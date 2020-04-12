@@ -40,9 +40,10 @@ class GraphScrollView: UIView {
         
         //constrain width of stack view to width of self.view, NOT scroll view
 //        self.stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true;
-            
+        
         
         let g = GraphUI(frame: CGRect(x: 0, y: 0, width: 900, height: 900))
+        scrollView.contentSize = g.frame.size
        // let g = GraphUI(frame: )
         stackView.addSubview(g)
     }

@@ -11,22 +11,32 @@ import SwiftUI
 struct LeftMenuView: View {
     @EnvironmentObject var mainViewModel: MainViewModel
     
+    init(){
+        UITableView.appearance().backgroundColor = .clear
+         UITableViewCell.appearance().backgroundColor = .clear
+    }
     var body: some View {
+        
         NavigationView {
             VStack {
+                Color.init(red: 76/255.0, green: 153/255.0, blue: 207/255.0)
+                
+                .edgesIgnoringSafeArea(.top)
+//                Spacer().frame(width: 300, height: 100, alignment: .leading)
+//                    .background(Color.init(red: 76/255.0, green: 153/255.0, blue: 207/255.0))
 //                HStack {
-                    Image("openICE-software")
-                        .resizable()
-                        .frame(width: CGFloat(150), height: CGFloat(150), alignment: .leading)
-                        .scaledToFit()
+//                    Image("openICE-software")
+//                        .resizable()
+//                        .frame(width: CGFloat(150), height: CGFloat(150), alignment: .leading)
+//                        .scaledToFit()
 //                        .padding(30)
 //                    Spacer()
 //                }
                 //            .background(Color.gray)
 //                NavigationLink(destination: EmptyView()) {
                 List() {
-                    
-//
+//                    
+//                         Color.init(red: 76/255.0, green: 153/255.0, blue: 207/255.0)
                         ForEach(mainViewModel.currentMenu.allMenuTypes(), id: \.self) { menu in
                             
                             Button(action: {
@@ -37,24 +47,22 @@ struct LeftMenuView: View {
                                 }
                             }) {
                                 Text(menu)
+                                    .font(.custom("Georgia Bold", size: 20))
+//                                .fontWeight(.bold)
+                                
+                                    .foregroundColor(Color.white)
                             }
-                        
+                           // .listRowBackground(Color.init(red: 76/255.0, green: 153/255.0, blue: 207/255.0))
                                 //foregroundColor(Color.black)
                                 //.font(.custom("Georgia", size: 20))
                             
                         }
-//                    }
-                    
-//                .listRowBackground(Color.gray)
-                }
-                .background(Color.init(red: 0/255.0, green: 100/255.0, blue: 0/255.0))
+                    }
+                
             }
             .transition(.move(edge: .leading))
-            .background(Color.init(red: 0/255.0, green: 100/255.0, blue: 0/255.0))
+            .background(Color.init(red: 76/255.0, green: 153/255.0, blue: 207/255.0))
         }
-        .navigationBarTitle("", displayMode: .inline)
-        
-        //        .background(Color.gray)
     }
 }
 
@@ -63,3 +71,5 @@ struct LeftMenuView_Previews: PreviewProvider {
         LeftMenuView()
     }
 }
+
+
