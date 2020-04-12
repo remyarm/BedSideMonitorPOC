@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		183AF651242F6D530059F181 /* LeftMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AF650242F6D530059F181 /* LeftMenuView.swift */; };
+		183B63C92442EAA60014A409 /* GraphScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B63C82442EAA50014A409 /* GraphScrollView.swift */; };
 		184306A22431B5AB00810E96 /* MQTTConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184306A12431B5AB00810E96 /* MQTTConnector.swift */; };
 		184585C6242D3345008CB5D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184585C5242D3345008CB5D5 /* AppDelegate.swift */; };
 		184585C8242D3345008CB5D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184585C7242D3345008CB5D5 /* SceneDelegate.swift */; };
@@ -44,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		183AF650242F6D530059F181 /* LeftMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuView.swift; sourceTree = "<group>"; };
+		183B63C82442EAA50014A409 /* GraphScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphScrollView.swift; sourceTree = "<group>"; };
+		183C28DF2441C86E004B8F6D /* GraphScrollView_old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphScrollView_old.swift; sourceTree = "<group>"; };
 		184306A12431B5AB00810E96 /* MQTTConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTConnector.swift; sourceTree = "<group>"; };
 		184585C2242D3345008CB5D5 /* BedSideMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BedSideMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		184585C5242D3345008CB5D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,10 +107,12 @@
 		1843069F2431B4EA00810E96 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				183B63C82442EAA50014A409 /* GraphScrollView.swift */,
 				18D188CA243D833B008A4FFA /* GraphUI.swift */,
 				184585C9242D3345008CB5D5 /* MainView.swift */,
 				183AF650242F6D530059F181 /* LeftMenuView.swift */,
 				18D188C6243D8207008A4FFA /* GraphView.swift */,
+				183C28DF2441C86E004B8F6D /* GraphScrollView_old.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -458,6 +463,7 @@
 				183AF651242F6D530059F181 /* LeftMenuView.swift in Sources */,
 				184585C6242D3345008CB5D5 /* AppDelegate.swift in Sources */,
 				18D188C7243D8207008A4FFA /* GraphView.swift in Sources */,
+				183B63C92442EAA60014A409 /* GraphScrollView.swift in Sources */,
 				184306A22431B5AB00810E96 /* MQTTConnector.swift in Sources */,
 				184585C8242D3345008CB5D5 /* SceneDelegate.swift in Sources */,
 				184585CA242D3345008CB5D5 /* MainView.swift in Sources */,
