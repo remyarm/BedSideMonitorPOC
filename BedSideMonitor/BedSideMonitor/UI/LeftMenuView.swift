@@ -11,32 +11,17 @@ import SwiftUI
 struct LeftMenuView: View {
     @EnvironmentObject var mainViewModel: MainViewModel
     
-    init(){
+    init() {
         UITableView.appearance().backgroundColor = .clear
          UITableViewCell.appearance().backgroundColor = .clear
     }
     var body: some View {
         
         NavigationView {
-            VStack {
+            ZStack(alignment: .leading) {
                 Color.init(red: 76/255.0, green: 153/255.0, blue: 207/255.0)
-                
                 .edgesIgnoringSafeArea(.top)
-//                Spacer().frame(width: 300, height: 100, alignment: .leading)
-//                    .background(Color.init(red: 76/255.0, green: 153/255.0, blue: 207/255.0))
-//                HStack {
-//                    Image("openICE-software")
-//                        .resizable()
-//                        .frame(width: CGFloat(150), height: CGFloat(150), alignment: .leading)
-//                        .scaledToFit()
-//                        .padding(30)
-//                    Spacer()
-//                }
-                //            .background(Color.gray)
-//                NavigationLink(destination: EmptyView()) {
                 List() {
-//                    
-//                         Color.init(red: 76/255.0, green: 153/255.0, blue: 207/255.0)
                         ForEach(mainViewModel.currentMenu.allMenuTypes(), id: \.self) { menu in
                             
                             Button(action: {
@@ -47,23 +32,21 @@ struct LeftMenuView: View {
                                 }
                             }) {
                                 Text(menu)
-                                    .font(.custom("Georgia Bold", size: 20))
-//                                .fontWeight(.bold)
-                                
+                                    .font(.custom("Georgia", size: 20))
                                     .foregroundColor(Color.white)
                             }
-                           // .listRowBackground(Color.init(red: 76/255.0, green: 153/255.0, blue: 207/255.0))
-                                //foregroundColor(Color.black)
-                                //.font(.custom("Georgia", size: 20))
-                            
                         }
                     }
+                Spacer()
                 
             }
             .transition(.move(edge: .leading))
             .background(Color.init(red: 76/255.0, green: 153/255.0, blue: 207/255.0))
+        .navigationBarTitle("Device List")
         }
+ 
     }
+
 }
 
 struct LeftMenuView_Previews: PreviewProvider {

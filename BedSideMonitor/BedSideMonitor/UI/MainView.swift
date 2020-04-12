@@ -56,9 +56,7 @@ struct MainView: View {
                                         
                                     }
                                 .padding(20)
-                                  
-//                                    .position(x: 0, y: 0)
-                                    .background(Color.gray)
+                                   .background(Color.init(red: 72/255.0, green: 118/255.0, blue: 172/255.0))
                                     
                                     
 //                                    Spacer().frame(width: 300, height: 30, alignment: .top)
@@ -82,7 +80,7 @@ struct MainView: View {
                                 }
                             }
                         }
-                        .background(Color.yellow)
+                       .background(Color.init(red: 72/255.0, green: 118/255.0, blue: 172/255.0))
                     }
                 }
                     
