@@ -39,7 +39,7 @@ struct GraphView: UIViewRepresentable {
     
     func updateUIView(_ uiView: GraphUI, context: UIViewRepresentableContext<GraphView>) {
        
-        //uiView.addValue(value: value)
+        uiView.addValue(value: value)
 //        guard let sView = uiView.superview, let scrollView = sView as? ScrollView<<#Content: View#>> else { return }
 //
 //        if uiView.currentRect.x > scrollView.frame.width {

@@ -14,6 +14,7 @@ struct LeftMenuView: View {
     init() {
         UITableView.appearance().backgroundColor = .clear
          UITableViewCell.appearance().backgroundColor = .clear
+       
     }
     var body: some View {
         

@@ -35,7 +35,7 @@ class GraphUI: UIView {
     }
     func drawLineGraph(count: Int, value: Double) {
         context?.setLineWidth(2.0)
-        context?.setStrokeColor(UIColor.blue.cgColor)
+        context?.setStrokeColor(UIColor.white.cgColor)
         let maxGraphHeight = Graph.kGraphHeight - Graph.kOffsetY
         context?.beginPath()
         var point = CGPoint(x: 0, y: 0)
@@ -63,7 +63,7 @@ class GraphUI: UIView {
     override func draw(_ rect: CGRect) {
         print(self.frame)
         context = UIGraphicsGetCurrentContext()
-        context?.setFillColor(CGColor(srgbRed: 191.0/2.055, green: 227.0/255.0, blue: 242.0/255.0, alpha: 0.8))
+        context?.setFillColor(CGColor(srgbRed: 80.0/2.055, green: 69.0/255.0, blue: 99.0/255.0, alpha: 0.2))
         context?.fill(self.bounds)
         context?.setLineWidth(0.6)
         context?.setStrokeColor(UIColor.black.cgColor)
@@ -86,7 +86,8 @@ class GraphUI: UIView {
                 context?.restoreGState()
             }
             
-            let attrs = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 10)!]
+            let attrs = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Bold", size: 10)!,
+                         NSAttributedString.Key.foregroundColor: UIColor.init(displayP3Red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1)]
             print(rect)
             context?.translateBy(x: rect.origin.x, y: rect.origin.y + rect.size.height)
             context?.scaleBy(x: 1.0, y: -1.0)
