@@ -63,7 +63,10 @@ class GraphUI: UIView {
     override func draw(_ rect: CGRect) {
         print(self.frame)
         context = UIGraphicsGetCurrentContext()
-        context?.setFillColor(CGColor(srgbRed: 80.0/2.055, green: 69.0/255.0, blue: 99.0/255.0, alpha: 0.2))
+        context?.clear(self.bounds)
+        x_Axis = 0.0
+//        context?.setFillColor(UIColor(displayP3Red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>))
+        context?.setFillColor(CGColor(srgbRed: 80.0/255, green: 69.0/255.0, blue: 99.0/255.0, alpha: 1.0))
         context?.fill(self.bounds)
         context?.setLineWidth(0.6)
         context?.setStrokeColor(UIColor.black.cgColor)

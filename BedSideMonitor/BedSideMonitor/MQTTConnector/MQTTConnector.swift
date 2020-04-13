@@ -12,10 +12,19 @@ import Combine
 
 class MQTTConnector: MQTTSessionDelegate {
 
+//    let  mqttSession = MQTTSession(
+//        host: "broker.hivemq.com",
+//        port: 1883,
+//        clientID: "", // must be unique to the client
+//        cleanSession: true,
+//        keepAlive: 15,
+//        useSSL: false
+//    )
+    
     let  mqttSession = MQTTSession(
-        host: "broker.hivemq.com",
+        host: "hclquest.cloudapp.net",
         port: 1883,
-        clientID: "", // must be unique to the client
+        clientID: "mdpnp", // must be unique to the client
         cleanSession: true,
         keepAlive: 15,
         useSSL: false
@@ -27,7 +36,7 @@ class MQTTConnector: MQTTSessionDelegate {
         mqttSession.connect { (error) in
             if (error == .none) {
                 self.mqttSession.delegate = self
-                self.mqttSession.subscribe(to: "testtopic/1", delivering: .atLeastOnce) { (error) in
+                self.mqttSession.subscribe(to: "devicedata", delivering: .atLeastOnce) { (error) in
                     print("Sunscribed successfully")
                     self.connectionPublisher.send(true)
                 }
